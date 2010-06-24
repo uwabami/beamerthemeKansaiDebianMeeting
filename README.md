@@ -10,8 +10,11 @@ originally  [KansaiDebianMeeting OpenOffice Impress theme](http://wiki.debian.or
 ![thumbs-3.png](http://github.com/uwabami/beamerthemeKyoto/raw/master/examples/thumbs-3.png "thumbs-3.png")
 ![thumbs-4.png](http://github.com/uwabami/beamerthemeKyoto/raw/master/examples/thumbs-4.png "thumbs-4.png")
 
-I want to create suitable color set...
+Needs help
+----------
 
+  - suitable colorset
+  - create header/footer using latex only(now, including png files)
 
 Permission
 ----------
@@ -21,8 +24,8 @@ All contents DFSG-Free.
    - src/beamerthemeKyoto.sty: Youhei SASAKI <uwabami@gfd-dennou.org>
    - src/debian-{header,footer}.png, src/kansai_debian.png: [Jun NOGATA](http://github.com/nogajun)
    - src/openlogo-light.png, src/debian-logo.png: based Debian logs. see [Debian logos](http://www.debian.org/logos/)
- - COPYING: Almost all are (GPL-2)[http://github.com/uwabami/beamerthemeKyoto/raw/master/GPL-2).
-   - src/openlogo-light.png, src/debian-logo.png: based Debian logos, these are (Debian Open Use Logo License)[http://github.com/uwabami/beamerthemeKyoto/raw/master/DebianOpenUseLogoLicense)
+ - COPYING: Almost all are [GPL-2](http://github.com/uwabami/beamerthemeKyoto/raw/master/GPL-2).
+   - src/openlogo-light.png, src/debian-logo.png: based Debian logos, these are [Debian Open Use Logo License](http://github.com/uwabami/beamerthemeKyoto/raw/master/DebianOpenUseLogoLicense)
 
    .
 
