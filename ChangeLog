@@ -1,12 +1,18 @@
-Youhei SASAKI <uwabami@gfd-dennou.org>	2010-06-24
+2010-06-24 Youhei SASAKI <uwabami@gfd-dennou.org>
 
-    Update theme using pgf package
-    
-      * remove beamer-bg.png: using pgfimage for header/footer images
-      * change directory structure
-      * create README/ChangeLog/LICENSE
-      * add git2cl.sh for update ChangeLog
+	ChangeLog update method changed
+	* Remove git2cl.sh
+	* Add Makefile, create rule "make cl"
+	* Update ChangeLog style
 
-Youhei SASAKI <uwabami@gfd-dennou.org>	2010-06-24
+2010-06-24 Youhei SASAKI <uwabami@gfd-dennou.org>
 
-    Initial import DebianTheme
+	Update theme using pgf package
+	  * remove beamer-bg.png: using pgfimage for header/footer images
+	  * change directory structure
+	  * create README/ChangeLog/LICENSE
+	  * add git2cl.sh for update ChangeLog
+
+2010-06-24 Youhei SASAKI <uwabami@gfd-dennou.org>
+
+	Initial import DebianTheme
