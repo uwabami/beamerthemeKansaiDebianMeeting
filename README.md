@@ -10,6 +10,8 @@ originally  [KansaiDebianMeeting OpenOffice Impress theme](http://wiki.debian.or
 ![thumbs-3.png](http://github.com/uwabami/beamerthemeKyoto/raw/master/examples/thumbs-3.png "thumbs-3.png")
 ![thumbs-4.png](http://github.com/uwabami/beamerthemeKyoto/raw/master/examples/thumbs-4.png "thumbs-4.png")
 
+I want to create suitable color set...
+
 
 Permission
 ----------
