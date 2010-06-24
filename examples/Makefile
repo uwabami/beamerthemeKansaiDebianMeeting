@@ -18,7 +18,7 @@ all: post
 create_thums: create_thums-stamp
 create_thums-stamp: $(PDFFiles)
 	pdftoppm -r 300 sample.pdf thumbs
-	mogrify -format png -geometry 320x240 *.ppm
+	mogrify -format png -geometry 256x192 *.ppm
 	touch $@
 
 post: create_thums
