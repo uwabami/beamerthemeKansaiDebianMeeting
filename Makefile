@@ -1,7 +1,10 @@
 #!/usr/bin/make 
 
 # nothing done
-all:
+all: examples
+
+examples:
+	( cd examples && make )
 
 clean:
 	( cd examples && make clean )
