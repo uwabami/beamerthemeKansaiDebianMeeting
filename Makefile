@@ -8,6 +8,7 @@ examples:
 
 clean:
 	( cd examples && make clean )
+	rm -rf src/auto
 
 distclean: clean
 	( cd examples && make distclean )
