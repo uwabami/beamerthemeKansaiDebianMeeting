@@ -1,11 +1,22 @@
 2010-06-25 Youhei SASAKI <uwabami@gfd-dennou.org>
 
+	Merge branch 'master' of github.com:uwabami/beamerthemeKyoto
+	Conflicts:
+		ChangeLog
+		README.md
+
+2010-06-25 Youhei SASAKI <uwabami@gfd-dennou.org>
+
 	typo fixed
 
 2010-06-25 Youhei SASAKI <uwabami@gfd-dennou.org>
 
 	Add post-commit
 	update ChangeLog automatically
+
+2010-06-25 Youhei SASAKI <uwabami@gfd-dennou.org>
+
+	misc changed
 
 2010-06-25 Youhei SASAKI <uwabami@gfd-dennou.org>
 
