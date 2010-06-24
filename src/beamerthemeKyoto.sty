@@ -1,0 +1,121 @@
+% Copyright 2010 by Youhei SASAKI <uwabami@gfd-dennou.org>
+%
+% This program can be redistributed and/or modified under the terms
+% of the GNU Public License, version 2
+%
+\ProvidesPackage{beamerthemeKobe}[2010/06/19 v0.1 for beamer 3.07]
+\mode<presentation>
+\useoutertheme[width=0pt]{sidebar}
+\useinnertheme[shade=true]{rounded}
+\setbeamertemplate{items}[square]
+\setbeamertemplate{sections/subsections in toc}[square]
+\usecolortheme{whale}
+\usecolortheme{orchid}
+\setbeamercolor*{frametitle}{parent=palette primary}
+\setbeamerfont{block title}{size={}}
+\setbeamercovered{transparent}
+\beamer@headheight=0.13\paperwidth
+% header/footer images
+\RequirePackage{pgf}
+\pgfdeclareimage[width=1.0\paperwidth]{debian-header}{debian-header}
+\pgfdeclareimage[width=1.0\paperwidth]{debian-footer}{debian-footer}
+\pgfdeclareimage[width=1.0\paperwidth]{openlogo-light}{openlogo-light}
+% Color settings
+\definecolor{oxygenorange}{HTML}{F7800A}
+\definecolor{oxygengray}{HTML}{686868}
+\definecolor{oxygenlightgray}{HTML}{EEEEEE}
+\definecolor{oxygenblue}{HTML}{236EAF}
+\setbeamercolor*{Title bar}{fg=white}
+\setbeamercolor*{Location bar}{fg=oxygenorange,bg=oxygenlightgray}
+\setbeamercolor*{frametitle}{parent=Title bar}
+\setbeamercolor*{block title}{bg=oxygenblue,fg=white}
+\setbeamercolor*{block body}{bg=oxygenlightgray,fg=oxygengray}
+\setbeamercolor*{normal text}{bg=white,fg=oxygengray}
+\setbeamercolor*{section in head/foot}{bg=oxygenblue,fg=white}
+% colortheme 
+\usecolortheme[named=oxygenorange]{structure}
+
+% fontsize settings
+\setbeamerfont{section in head/foot}{size=\tiny,series=\normalfont}
+\setbeamerfont{frametitle}{size=\Large,serires=\bfseries}
+
+% default header/footer setting
+\newcommand{\setdefaultslide}{
+  % set title position
+  \setbeamertemplate{background}{bg=white}
+  \setbeamertemplate{frametitle}
+  {
+    \vskip-0.12\beamer@headheight
+    \vskip-\baselineskip
+    \vskip-0.2cm
+    \hskip1.5cm\usebeamerfont*{frametitle}\insertframetitle
+    \vskip-0.1em
+    \hskip0.8cm\usebeamerfont*{framesubtitle}\insertframesubtitle
+  }
+  % set header image
+  \setbeamertemplate{headline}
+  {
+    \pgfuseimage{debian-header}
+    \vskip -2.4cm
+    \linethickness{0pt}
+    \framelatex{
+      \begin{beamercolorbox}[wd=\paperwidth,ht=1.0\beamer@headheight]{Title bar}
+      \end{beamercolorbox}}
+  }
+  % set footer image
+%  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{footline}
+  {
+    \pgfuseimage{debian-footer}
+%    \linethickness{0pt}
+    \framelatex{
+      \begin{beamercolorbox}[leftskip=.3cm,wd=\paperwidth,ht=0.3\beamer@headheight,,sep=0.1cm]{Location bar}
+          \usebeamerfont{section in head/foot}%
+          \insertshortauthor~|~\insertshorttitle
+          \hfill
+          \insertframenumber/\inserttotalframenumber
+      \end{beamercolorbox}}
+  }
+}
+
+% titleslide settings
+\newcommand{\settitleslide}{
+  \setbeamertemplate{background}{\pgfuseimage{openlogo-light}}
+  % \setbeamercolor{frametitle}{parent=sidebar}{
+  %   \nointerlineskip%
+  %   \vskip-\beamer@headheight%
+  %   \vbox to \beamer@headheight{%
+  %     \vfil
+  %     \leftskip=-\beamer@leftmargin%
+  %     \advance\leftskip by0.3cm%
+  %     \rightskip=-\beamer@rightmargin%
+  %     \advance\rightskip by0.3cm plus1fil%
+  %     {\usebeamercolor[fg]{frametitle}\usebeamerfont{frametitle}\insertframetitle\par}%
+  %     {\usebeamercolor[fg]{framesubtitle}\usebeamerfont{framesubtitle}\insertframesubtitle\par}%
+  %     \vbox{}%
+  %     \vskip-1em%
+  %     \vfil
+  %   }%
+  % }
+  \setbeamertemplate{headline}{
+    \begin{beamercolorbox}[wd=\paperwidth]{frametitle}
+        \hfill%
+        \vrule width0pt height \beamer@headheight%
+    \end{beamercolorbox}
+  }
+  \setbeamertemplate{frametitle}{}
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{footline}{}
+}
+%% [takahashi method] %%%
+\newcommand{\takahashi}[2][12]{
+  \settitleslide
+  \begin{frame} 
+      \begin{center} 
+          \bfseries \fontsize{#1pt}{#1pt}\selectfont #2
+      \end{center} 
+  \end{frame}
+  \setdefaultslide
+}
+\mode
+<all>
