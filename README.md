@@ -1,4 +1,3 @@
-<!-- -*- markdown -*- -->
 Kansai Debian Presentation template
 ===================================
 
@@ -15,6 +14,7 @@ All contents DFSG-Free.
    - src/debian-{header,footer}.png, src/kansai_debian.png: [Jun NOGATA](http://github.com/nogajun)
    - src/openlogo-light.png, src/debian-logo.png: based Debian logs. see [Debian logos](http://www.debian.org/logos/)
  - COPYING: GPL-2, see [COPYING](./COPYING)
+   - src/openlogo-light.png, src/debian-logo.png: based Debian logos, these are Debian Open Use Logo License.
 
 History
 -------
