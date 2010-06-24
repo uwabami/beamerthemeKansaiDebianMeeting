@@ -1,5 +1,9 @@
 2010-06-25 Youhei SASAKI <uwabami@gfd-dennou.org>
 
+	rename README to README.md
+
+2010-06-25 Youhei SASAKI <uwabami@gfd-dennou.org>
+
 	Add sample slide
 	* Create example directory
 	  - Add sample.tex
