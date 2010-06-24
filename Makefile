@@ -20,3 +20,4 @@ git2cl:
 	sed -e 's/^\t\([0-9]*-[0-9]*-[0-9]*.*\)$$/\1/g' | \
 	sed -e 's/^\t$$//g' \
 	> ChangeLog
+	[ ! `git diff --check --exit-code ChangeLog` ] || git commit --amend -C HEAD
