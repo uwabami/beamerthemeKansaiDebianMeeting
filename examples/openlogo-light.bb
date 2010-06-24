@@ -1,0 +1,1 @@
+../src/openlogo-light.bb

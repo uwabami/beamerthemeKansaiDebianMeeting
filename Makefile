@@ -3,6 +3,12 @@
 # nothing done
 all:
 
+clean:
+	( cd examples && make clean )
+
+distclean: clean
+	( cd examples && make distclean )
+
 cl: git2cl
 git2cl:
 	@git log --date=short --pretty=format:"%ad %an <%ae>%n%n%s%n%b" | \
