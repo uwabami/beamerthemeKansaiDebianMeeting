@@ -4,7 +4,8 @@ Kansai Debian Presentation template
 Debian theme for latex-beamer, 
 originally  [KansaiDebianMeeting OpenOffice Impress theme](http://wiki.debian.org/KansaiDebianMeetingArchives?action=AttachFile&do=view&target=20081108-KGB-Kansai_debian_PR.odp) created by [Jun NOGATA](http://github.com/nogajun).
 
-sample
+ - sample
+
 ![thumbs-1.png](http://github.com/uwabami/beamerthemeKyoto/raw/master/examples/thumbs-1.png "thumbs-1.png")
 ![thumbs-3.png](http://github.com/uwabami/beamerthemeKyoto/raw/master/examples/thumbs-3.png "thumbs-3.png")
 ![thumbs-4.png](http://github.com/uwabami/beamerthemeKyoto/raw/master/examples/thumbs-4.png "thumbs-4.png")
