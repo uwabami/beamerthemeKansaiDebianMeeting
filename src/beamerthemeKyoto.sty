@@ -7,37 +7,40 @@
 \mode<presentation>
 \useoutertheme[width=0pt]{sidebar}
 \useinnertheme[shade=true]{rounded}
-\setbeamertemplate{items}[square]
-\setbeamertemplate{sections/subsections in toc}[square]
 \usecolortheme{whale}
 \usecolortheme{orchid}
-\setbeamercolor*{frametitle}{parent=palette primary}
-\setbeamerfont{block title}{size={}}
+\definecolor{dimgray}{HTML}{696969}
+\definecolor{lightgray}{HTML}{EEEEEE}
+%\definecolor{lightblue}{HTML}{236EAF}
+\setbeamercolor*{Title bar}{fg=white}
+%\setbeamercolor*{Location bar}{fg=royalblue,bg=lightgray}
+\setbeamercolor*{frametitle}{parent=Title bar}
+%\setbeamercolor*{block title}{bg=lightblue,fg=white}
+%\setbeamercolor*{block body}{bg=lightgray,fg=dimgray}
+\setbeamercolor*{normal text}{fg=dimgray}
+%\setbeamercolor*{section in head/foot}{bg=lightblue,fg=white}
+% colortheme 
+\usecolortheme[named=red]{structure}
+\setbeamercolor*{frametitle}{palette primary, fg=white}
+\setbeamertemplate{items}[square]
+\setbeamertemplate{sections/subsections in toc}[square]
 \setbeamercovered{transparent}
 \beamer@headheight=0.13\paperwidth
 % header/footer images
 \RequirePackage{pgf}
-\pgfdeclareimage[width=1.0\paperwidth]{debian-header}{debian-header}
-\pgfdeclareimage[width=1.0\paperwidth]{debian-footer}{debian-footer}
-\pgfdeclareimage[width=1.0\paperwidth]{openlogo-light}{openlogo-light}
-% Color settings
-\definecolor{royalblue}{HTML}{3333CC}
-\definecolor{dimgray}{HTML}{696969}
-\definecolor{lightgray}{HTML}{EEEEEE}
-\definecolor{lightblue}{HTML}{236EAF}
-\setbeamercolor*{Title bar}{fg=white}
-\setbeamercolor*{Location bar}{fg=royalblue,bg=lightgray}
-\setbeamercolor*{frametitle}{parent=Title bar}
-\setbeamercolor*{block title}{bg=lightblue,fg=white}
-\setbeamercolor*{block body}{bg=lightgray,fg=dimgray}
-\setbeamercolor*{normal text}{bg=white,fg=dimgray}
-\setbeamercolor*{section in head/foot}{bg=lightblue,fg=white}
-% colortheme 
-\usecolortheme[named=royalblue]{structure}
-
+\pgfdeclareimage[width=1.0\paperwidth]{debian-header}{%
+/usr/share/texmf/tex/latex/beamer/base/art/Kyoto/debian-header}
+\pgfdeclareimage[width=1.0\paperwidth]{debian-footer}{%
+/usr/share/texmf/tex/latex/beamer/base/art/Kyoto/debian-footer}
+\pgfdeclareimage[width=1.0\paperwidth]{openlogo-light}{%
+/usr/share/texmf/tex/latex/beamer/base/art/Kyoto/openlogo-light}
+% fonttheme
+\usefonttheme{structurebold}
 % fontsize settings
-\setbeamerfont{section in head/foot}{size=\tiny,series=\normalfont}
+\setbeamerfont{section in head/foot}{size=\tiny,series=\bfseries}
 \setbeamerfont{frametitle}{size=\Large,serires=\bfseries}
+
+
 
 % default header/footer setting
 \newcommand{\setdefaultslide}{
@@ -118,6 +121,28 @@
   \end{frame}
   \setdefaultslide
 }
+% commandline環境を定義．画面入出力についてはcommandline環境
+% で表記する
 
+% commandline 環境
+\definecolor{dancerdarkblue}{rgb}{0,0.08,0.45}
+\definecolor{dancernormalblue}{rgb}{0.8,0.9,0.95}
+\definecolor{dancerlightblue}{rgb}{0.8,0.95,1}
+\usepackage{ulem}
+\usepackage{tabularx}
+\usepackage{fancybox}
+\usepackage{fancyvrb}
+\usepackage{float}
+\newenvironment{commandline}%
+{\VerbatimEnvironment
+  \begin{Sbox}\begin{minipage}{0.9\hsize}\begin{fontsize}{8}{8} \begin{BVerbatim}}%
+                {\end{BVerbatim}\end{fontsize}\end{minipage}\end{Sbox}
+  \setlength{\fboxsep}{8pt}
+  % start on a new paragraph
+  \vspace{6pt}% skip before
+  \fcolorbox{dancerdarkblue}{dancerlightblue}{\TheSbox}
+  \vspace{6pt}% skip after
+}
+% end of commandline
 \mode
 <all>
