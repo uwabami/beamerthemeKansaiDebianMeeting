@@ -1,0 +1,149 @@
+% Copyright 2010-2016 Youhei SASAKI <uwabami@gfd-dennou.org>
+%
+% This program can be redistributed and/or modified under the terms of
+% the GNU Public License, version 2, or (at your option) any later
+% version.
+%
+%
+\ProvidesPackage{beamerthemeKansaiDebian}[2016/11/15 v0.2 for beamer 3.07]
+\mode<presentation>
+\setbeamersize{text margin left=3mm,text margin right=3mm}
+%% fontsize settings
+\setbeamerfont{title}{parent=structure,size=\huge}
+\setbeamerfont{section in head/foot}{size=\tiny,series=\bfseries}
+\setbeamerfont{frametitle}{parent=structure,size=\Large,series=\bfseries}
+\setbeamerfont{framesubtitle}{parent=frametitle,size=\large}
+\setbeamerfont{itemize/enumerate body}{size=\normalsize}
+\setbeamerfont{itemize/enumerate subbody}{size=\small}
+\setbeamerfont{itemize/enumerate subsubbody}{size=\footnotesize}
+\newlength{\beamer@kansaidebian@normalmargin}
+\setlength{\beamer@kansaidebian@normalmargin}{.06\paperwidth}
+\setbeamersize{text margin left=\beamer@kansaidebian@normalmargin}
+\setbeamersize{text margin right=\beamer@kansaidebian@normalmargin}
+\setlength\leftmargini{.6\beamer@kansaidebian@normalmargin}
+\setlength\leftmarginii{.4\beamer@kansaidebian@normalmargin}
+\setlength\leftmarginiii{.4\beamer@kansaidebian@normalmargin}
+% Items.
+\defbeamertemplate{itemize item}{circlealt}%
+{\small\raise.2ex\hbox{\donotcoloroutermaths$\bullet$}}
+\defbeamertemplate{itemize subitem}{circlealt}%
+{\small\raise.1ex\hbox{\donotcoloroutermaths$\circ$}}
+\defbeamertemplate{itemize subsubitem}{circlealt}%
+{\scriptsize\raise.1ex\hbox{\donotcoloroutermaths$\bullet$}}
+\setbeamertemplate{items}[squarealt]
+\setbeamertemplate{sections/subsections in toc}[circlealt]
+\setbeamertemplate{blocks}[rounded][shadow=true]
+
+\useoutertheme[width=0pt]{sidebar}
+\useinnertheme[shade=true]{rounded}
+\usecolortheme{whale}
+\usecolortheme{orchid}
+
+\setbeamercolor*{Title bar}{fg=white}
+\setbeamercolor*{frametitle}{parent=Title bar}
+\setbeamercolor*{normal text}{fg=black}
+% colortheme
+\definecolor{crimson}{HTML}{DC143c}
+\usecolortheme[named=crimson]{structure}
+\setbeamercolor*{frametitle}{palette primary, fg=white}
+\setbeamertemplate{items}[square]
+\setbeamertemplate{sections/subsections in toc}[square]
+\setbeamercovered{transparent}
+\beamer@headheight=0.13\paperwidth
+% header/footer images
+\RequirePackage{pgf}
+\pgfdeclareimage[width=1.0\paperwidth]{debian-header}{%
+/usr/share/texmf/tex/latex/beamer/base/art/Kyoto/debian-header}
+\pgfdeclareimage[width=1.0\paperwidth]{debian-footer}{%
+/usr/share/texmf/tex/latex/beamer/base/art/Kyoto/debian-footer}
+\pgfdeclareimage[width=1.0\paperwidth]{openlogo-light}{%
+/usr/share/texmf/tex/latex/beamer/base/art/Kyoto/openlogo-light}
+% fonttheme
+\usefonttheme{structurebold}
+
+% default header/footer setting
+\newcommand{\setdefaultslide}{
+  % set title position
+  \setbeamertemplate{background}{bg=white}
+  \setbeamertemplate{frametitle}
+  {
+    \vskip-0.12\beamer@headheight
+    \vskip-\baselineskip
+    \vskip-0.2cm
+    \hskip1.5cm\usebeamerfont*{frametitle}\insertframetitle
+    \vskip-0.1em
+    \hskip0.8cm\usebeamerfont*{framesubtitle}\insertframesubtitle
+  }
+  % set header image
+  \setbeamertemplate{headline}
+  {
+    \pgfuseimage{debian-header}
+    \vskip -2.4cm
+    \linethickness{0pt}
+    \framelatex{
+      \begin{beamercolorbox}[wd=\paperwidth,ht=1.0\beamer@headheight]{Title bar}
+      \end{beamercolorbox}}
+  }
+  % set footer image
+%  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{footline}
+  {
+    \pgfuseimage{debian-footer}
+%    \linethickness{0pt}
+    \framelatex{
+      \begin{beamercolorbox}[leftskip=.3cm,wd=\paperwidth,ht=0.3\beamer@headheight,,sep=0.1cm]{Location bar}
+          \usebeamerfont{section in head/foot}%
+          \insertshortauthor~|~\insertshorttitle
+          \hfill
+          \insertframenumber/\inserttotalframenumber
+      \end{beamercolorbox}}
+  }
+}
+
+% titleslide settings
+\newcommand{\settitleslide}{
+  \setbeamertemplate{background}{\pgfuseimage{openlogo-light}}
+  \setbeamertemplate{headline}{
+    \begin{beamercolorbox}[wd=\paperwidth]{frametitle}
+        \hfill%
+        \vrule width0pt height \beamer@headheight%
+    \end{beamercolorbox}
+  }
+  \setbeamertemplate{frametitle}{}
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{footline}{}
+}
+%% [takahashi method] %%%
+\newcommand{\takahashi}[2][12]{
+  \settitleslide
+  \begin{frame}
+      \vspace{-20mm}
+      \begin{center}
+          \bfseries \fontsize{#1pt}{#1pt}\selectfont #2
+      \end{center}
+  \end{frame}
+  \setdefaultslide
+}
+
+% commandline ´Ä¶­
+\definecolor{dancerdarkblue}{rgb}{0,0.08,0.45}
+\definecolor{dancernormalblue}{rgb}{0.8,0.9,0.95}
+\definecolor{dancerlightblue}{rgb}{0.8,0.95,1}
+\usepackage{ulem}
+\usepackage{tabularx}
+\usepackage{fancybox}
+\usepackage{fancyvrb}
+\usepackage{float}
+\newenvironment{commandline}%
+{\VerbatimEnvironment
+  \begin{Sbox}\begin{minipage}{1.0\textwidth}\begin{fontsize}{8}{8} \begin{BVerbatim}}%
+                {\end{BVerbatim}\end{fontsize}\end{minipage}\end{Sbox}
+  \setlength{\fboxsep}{8pt}
+  % start on a new paragraph
+  \vspace{6pt}% skip before
+  \fcolorbox{dancerdarkblue}{dancerlightblue}{\TheSbox}
+  \vspace{6pt}% skip after
+}
+% end of commandline
+\mode
+<all>
