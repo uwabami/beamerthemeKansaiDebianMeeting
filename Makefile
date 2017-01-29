@@ -1,18 +1,15 @@
-#!/usr/bin/make 
+#!/usr/bin/make
+ORG	:= $(wildcard *.org)
+TEX	:= $(ORG:%.org=%.tex)
+PDF	:= $(ORG:%.org=%.pdf)
 
-# nothing done
-all: examples
-
-examples:
-	( cd examples && make )
-
-clean:
-	( cd examples && make clean )
-	rm -rf src/auto
-
-distclean: clean
-	( cd examples && make distclean )
-
+all: $(PDF) post
+%.pdf: %.org
+	emacs -q --no-site-file --batch README.org -f org-beamer-export-to-pdf
+post:
+	@rm -f $(TEX) *~
+distclean: post
+	rm -f $(PDF)
 cl: git2cl
 git2cl:
 	@git log --date=short --pretty=format:"%ad %an <%ae>%n%n%s%n%b" | \

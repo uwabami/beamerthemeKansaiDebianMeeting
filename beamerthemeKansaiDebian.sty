@@ -1,0 +1,465 @@
+%
+% Copyright 2010-2017 Youhei SASAKI <uwabami@gfd-dennou.org>
+%
+% This program can be redistributed and/or modified under the terms of
+% the GNU Lesser Public License version 3, or (at your option) any later
+% version.
+%
+\mode<presentation>
+\RequirePackage{pgf}
+\RequirePackage{tikz}
+
+\let\Tiny=\tiny  % suppres some font warnings
+
+\def\beamer@KansaiDebian@true{true}
+\DeclareOptionBeamer{navigation}[true]{\def\beamer@KansaiDebian@navigation{#1}}
+\DeclareOptionBeamer{infoline}[true]{\def\beamer@KansaiDebian@infoline{#1}}
+\DeclareOptionBeamer{shadow}[true]{\def\beamer@KansaiDebian@shadow{#1}}
+\ExecuteOptionsBeamer{navigation=false,infoline=false,shadow=false}
+\ProcessOptionsBeamer%
+
+%% margin
+\setbeamersize{text margin left=.03\paperwidth}
+\setbeamersize{text margin right=.03\paperwidth}
+
+%% inner, outer, font theme
+\usetheme{default}
+\setbeamertemplate{blocks}[rounded][shadow=\beamer@KansaiDebian@shadow]
+\setbeamertemplate{title page}[default][colsep=-4bp,rounded=true,shadow=\beamer@KansaiDebian@shadow]
+\usecolortheme{whale,orchid}
+\useinnertheme{circles}
+%
+% \usefonttheme{professionalfonts}
+% \usefonttheme{structurebold}
+
+%% fontsize settings
+\setbeamerfont{framesubtitle}{parent=frametitle,size=\normalsize}
+
+%% color settings
+\definecolor{headerlight}{HTML}{D60650}
+\definecolor{headerdark}{HTML}{7F0430}
+\definecolor{cffebf8}{RGB}{255,235,248}
+\definecolor{cffffff}{RGB}{255,255,255}
+\setbeamercolor{frametitle}{fg=white,bg=headerlight!90!headerdark}
+\setbeamercolor{author in head/foot}{fg=white,bg=}
+\setbeamercolor{title in head/foot}{fg=white,bg=}
+\setbeamercolor{date in head/foot}{fg=white,bg=}
+\usecolortheme[RGB={214,6,80}]{structure}
+
+%% footer shading
+\pgfdeclarehorizontalshading[headerlight,headerdark]{beamer@footlineshade}{3.5ex}{%
+  color(0ex)=(headerlight);
+  color(\paperwidth)=(headerdark)
+}
+
+%% header shading
+\pgfdeclareverticalshading[headerlight,headerdark]{beamer@headlineshade}{72pt}{%
+  color(0pt)=(headerdark);
+  color(72pt)=(headerlight)
+}
+
+%% backgound image
+\setbeamertemplate{background}{%
+  \hbox to \hsize{\hfill%
+    \resizebox{!}{\paperheight}{%
+      % svg2tikz output --
+      \begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt]
+        \path[fill=cffebf8] (51.9860,57.2970) .. controls (50.1890,57.3220) and
+        (52.3260,58.2230) .. (54.6720,58.5840) .. controls (55.3200,58.0780) and
+        (55.9080,57.5660) .. (56.4320,57.0680) .. controls (54.9710,57.4260) and
+        (53.4840,57.4340) .. (51.9860,57.2970);
+        \path[fill=cffebf8] (61.6310,54.8930) .. controls (62.7010,53.4160) and
+        (63.4810,51.7990) .. (63.7560,50.1270) .. controls (63.5160,51.3190) and
+        (62.8690,52.3480) .. (62.2600,53.4340) .. controls (58.9010,55.5490) and
+        (61.9440,52.1780) .. (62.2580,50.8970) .. controls (58.6460,55.4430) and
+        (61.7620,53.6230) .. (61.6310,54.8930);
+        \path[fill=cffebf8] (65.1910,45.6290) .. controls (65.4080,42.3930) and
+        (64.5540,43.4160) .. (64.2670,44.6510) .. controls (64.6020,44.8250) and
+        (64.8670,46.9320) .. (65.1910,45.6290);
+        \path[fill=cffebf8] (45.1720,1.3990) .. controls (46.1310,1.5710) and
+        (47.2440,1.7030) .. (47.0880,1.9320) .. controls (48.1370,1.7020) and
+        (48.3750,1.4900) .. (45.1720,1.3990);
+        \path[fill=cffebf8] (47.0880,1.9320) -- (46.4100,2.0720) -- (47.0410,2.0160) --
+        (47.0880,1.9320);
+        \path[fill=cffebf8] (76.9920,46.8560) .. controls (77.0990,49.7620) and
+        (76.1420,51.1720) .. (75.2790,53.6680) -- (73.7260,54.4440) .. controls
+        (72.4550,56.9120) and (73.8490,56.0110) .. (72.9390,57.9740) .. controls
+        (70.9550,59.7380) and (66.9180,63.4940) .. (65.6260,63.8370) .. controls
+        (64.6830,63.8160) and (66.2650,62.7240) .. (66.4720,62.2960) .. controls
+        (63.8160,64.1200) and (64.3410,65.0340) .. (60.2790,66.1420) --
+        (60.1600,65.8780) .. controls (50.1420,70.5910) and (36.2260,61.2510) ..
+        (36.4090,48.5070) .. controls (36.3020,49.3160) and (36.1050,49.1140) ..
+        (35.8830,49.4410) .. controls (35.3660,42.8840) and (38.9110,36.2980) ..
+        (44.8900,33.6090) .. controls (50.7380,30.7140) and (57.5940,31.9020) ..
+        (61.7830,35.8060) .. controls (59.4820,32.7920) and (54.9020,29.5970) ..
+        (49.4740,29.8960) .. controls (44.1570,29.9800) and (39.1830,33.3590) ..
+        (37.5230,37.0270) .. controls (34.7990,38.7420) and (34.4830,43.6380) ..
+        (33.2960,44.5340) .. controls (31.6990,56.2710) and (36.3000,61.3420) ..
+        (44.0830,67.3070) .. controls (45.3080,68.1330) and (44.4280,68.2580) ..
+        (44.5940,68.8870) .. controls (42.0080,67.6760) and (39.6400,65.8480) ..
+        (37.6930,63.6100) .. controls (38.7260,65.1220) and (39.8410,66.5920) ..
+        (41.2820,67.7470) .. controls (38.8440,66.9210) and (35.5870,61.8390) ..
+        (34.6360,61.6320) .. controls (38.8390,69.1570) and (51.6880,74.8290) ..
+        (58.4160,72.0150) .. controls (55.3030,72.1300) and (51.3480,72.0790) ..
+        (47.8500,70.7860) .. controls (46.3810,70.0300) and (44.3830,68.4640) ..
+        (44.7400,68.1710) .. controls (53.9220,71.6010) and (63.4070,70.7690) ..
+        (71.3520,64.4000) .. controls (73.3730,62.8260) and (75.5810,60.1480) ..
+        (76.2190,60.1110) .. controls (75.2580,61.5560) and (76.3830,60.8060) ..
+        (75.6450,62.0820) .. controls (77.6590,58.8340) and (74.7700,60.7600) ..
+        (77.7270,56.4730) -- (78.8190,57.9770) .. controls (78.4130,55.2810) and
+        (82.1670,52.0070) .. (81.7860,47.7430) .. controls (82.6470,46.4390) and
+        (82.7470,49.1460) .. (81.8330,52.1460) .. controls (83.1010,48.8180) and
+        (82.1670,48.2830) .. (82.4930,45.5370) .. controls (82.8450,46.4600) and
+        (83.3070,47.4410) .. (83.5440,48.4150) .. controls (82.7180,45.1990) and
+        (84.3920,42.9990) .. (84.8060,41.1300) .. controls (84.3980,40.9490) and
+        (83.5310,42.5520) .. (83.3330,38.7530) .. controls (83.3620,37.1030) and
+        (83.7920,37.8880) .. (83.9580,37.4820) .. controls (83.6340,37.2960) and
+        (82.7840,36.0310) .. (82.2670,33.6050) .. controls (82.6420,33.0350) and
+        (83.2690,35.0830) .. (83.7790,35.1670) .. controls (83.4510,33.2380) and
+        (82.8860,31.7670) .. (82.8630,30.2870) .. controls (81.3730,27.1730) and
+        (82.3360,30.7020) .. (81.1270,28.9500) .. controls (79.5410,24.0030) and
+        (82.4430,27.8020) .. (82.6390,25.5540) .. controls (85.0430,29.0370) and
+        (86.4140,34.4350) .. (87.0430,36.6710) .. controls (86.5630,33.9450) and
+        (85.7870,31.3040) .. (84.8400,28.7490) .. controls (85.5700,29.0560) and
+        (83.6640,23.1400) .. (85.7890,27.0580) .. controls (83.5190,18.7060) and
+        (76.0740,10.9020) .. (69.2250,7.2400) .. controls (70.0630,8.0070) and
+        (71.1210,8.9700) .. (70.7410,9.1210) .. controls (67.3350,7.0930) and
+        (67.9340,6.9350) .. (67.4460,6.0780) .. controls (64.6710,4.9490) and
+        (64.4890,6.1690) .. (62.6510,6.0800) .. controls (57.4210,3.3060) and
+        (56.4130,3.6010) .. (51.6000,1.8630) -- (51.8190,2.8860) .. controls
+        (48.3540,1.7320) and (47.7820,3.3240) .. (44.0370,2.8900) .. controls
+        (43.8090,2.7120) and (45.2370,2.2460) .. (46.4120,2.0750) .. controls
+        (43.0620,2.5170) and (43.2190,1.4150) .. (39.9410,2.1970) .. controls
+        (40.7490,1.6300) and (41.6030,1.2550) .. (42.4650,0.7730) .. controls
+        (39.7330,0.9390) and (35.9430,2.3630) .. (37.1130,1.0680) .. controls
+        (32.6570,3.0560) and (24.7430,5.8470) .. (20.3020,10.0110) -- (20.1620,9.0780)
+        .. controls (18.1270,11.5210) and (11.2880,16.3740) .. (10.7430,19.5380) --
+        (10.1990,19.6650) .. controls (9.1400,21.4580) and (8.4550,23.4900) ..
+        (7.6150,25.3350) .. controls (6.2300,27.6950) and (5.5850,26.2430) ..
+        (5.7820,26.6130) .. controls (3.0580,32.1360) and (1.7050,36.7770) ..
+        (0.5360,40.5830) .. controls (1.3690,41.8280) and (0.5560,48.0780) ..
+        (0.8710,53.0800) .. controls (-0.4970,77.7840) and (18.2090,101.7700) ..
+        (38.6560,107.3080) .. controls (41.6530,108.3800) and (46.1100,108.3390) ..
+        (49.9010,108.4490) .. controls (45.4280,107.1700) and (44.8500,107.7710) ..
+        (40.4930,106.2520) .. controls (37.3500,104.7720) and (36.6610,103.0820) ..
+        (34.4350,101.1500) -- (35.3160,102.7070) .. controls (30.9500,101.1620) and
+        (32.7770,100.7950) .. (29.2250,99.6700) -- (30.1660,98.4410) .. controls
+        (28.7510,98.3340) and (26.4180,96.0560) .. (25.7800,94.7950) --
+        (24.2320,94.8560) .. controls (22.3720,92.5610) and (21.3810,90.9070) ..
+        (21.4530,89.6260) -- (20.9530,90.5170) .. controls (20.3860,89.5440) and
+        (14.1100,81.9100) .. (17.3660,83.6870) .. controls (16.7610,83.1340) and
+        (15.9570,82.7870) .. (15.0850,81.2030) -- (15.7480,80.4450) .. controls
+        (14.1810,78.4290) and (12.8640,75.8450) .. (12.9640,74.9840) .. controls
+        (13.8000,76.1130) and (14.3800,76.3240) .. (14.9540,76.5170) .. controls
+        (10.9970,66.6990) and (10.7750,75.9760) .. (7.7780,66.5230) --
+        (8.4120,66.4720) .. controls (7.9260,65.7400) and (7.6310,64.9450) ..
+        (7.2400,64.1650) -- (7.5160,61.4150) .. controls (4.6670,58.1210) and
+        (6.7190,47.4090) .. (7.1300,41.5340) .. controls (7.4150,39.1450) and
+        (9.5080,36.6020) .. (11.1000,32.6140) -- (10.1300,32.4470) .. controls
+        (11.9840,29.2130) and (20.7160,19.4590) .. (24.7600,19.9610) .. controls
+        (26.7190,17.5000) and (24.3710,19.9520) .. (23.9880,19.3320) .. controls
+        (28.2910,14.8790) and (29.6440,16.1860) .. (32.5480,15.3850) .. controls
+        (35.6800,13.5260) and (29.8600,16.1100) .. (31.3450,14.6760) .. controls
+        (36.7590,13.2930) and (35.1820,11.5320) .. (42.2450,10.8300) .. controls
+        (42.9900,11.2540) and (40.5160,11.4850) .. (39.8950,12.0350) .. controls
+        (44.4060,9.8280) and (54.1700,10.3300) .. (60.5120,13.2600) .. controls
+        (67.8710,16.6990) and (76.1390,26.8650) .. (76.4650,36.4300) --
+        (76.8360,36.5300) .. controls (76.6480,40.3320) and (77.4180,44.7290) ..
+        (76.0840,48.7680) -- (76.9920,46.8560);
+        \path[fill=cffebf8] (32.3720,59.7640) -- (32.1200,61.0240) .. controls
+        (33.3010,62.6280) and (34.2380,64.3660) .. (35.7460,65.6200) .. controls
+        (34.6610,63.5020) and (33.8550,62.6270) .. (32.3720,59.7640);
+        \path[fill=cffebf8] (35.1640,59.6540) .. controls (34.5390,58.9630) and
+        (34.1690,58.1310) .. (33.7550,57.3020) .. controls (34.1510,58.7590) and
+        (34.9620,60.0110) .. (35.7170,61.2840) -- (35.1640,59.6540);
+        \path[fill=cffebf8] (84.5680,48.9160) -- (84.3040,49.5780) .. controls
+        (83.8200,53.0160) and (82.7750,56.4180) .. (81.1730,59.5720) .. controls
+        (82.9430,56.2440) and (84.0880,52.6040) .. (84.5680,48.9160);
+        \path[fill=cffebf8] (45.5270,0.5370) .. controls (46.7420,0.0920) and
+        (48.5140,0.2930) .. (49.8030,0.0000) .. controls (48.1230,0.1410) and
+        (46.4510,0.2250) .. (44.8000,0.4380) -- (45.5270,0.5370);
+        \path[fill=cffebf8] (2.8720,23.2190) .. controls (3.1520,25.8110) and
+        (0.9220,26.8170) .. (3.3660,25.1080) .. controls (4.6760,22.1570) and
+        (2.8540,24.2930) .. (2.8720,23.2190);
+        \path[fill=cffebf8] (0.0000,35.2150) .. controls (0.5630,33.4870) and
+        (0.6650,32.4490) .. (0.8800,31.4490) .. controls (-0.6760,33.4380) and
+        (0.1640,33.8620) .. (0.0000,35.2150);
+      \end{tikzpicture}
+    }\hfill}
+}
+%%%% header
+\setbeamertemplate{headline}{}
+\defbeamertemplate*{frametitle}{KansaiDebian}[1][left]
+{
+  \hbox{%
+    \hskip-\beamer@leftmargin
+    \begin{pgfpicture}{0pt}{0pt}{\paperwidth}{72pt}
+      % (0ex, 0ex)              -- bottom left
+      % (.95\paperwidth, 72pt)  -- upper right
+      \begin{pgfscope}%
+        %% create rectangle
+        \pgfmoveto{\pgfpoint{.02\paperwidth}{4pt}}
+        \pgflineto{\pgfpoint{.96\paperwidth}{4pt}}
+        \pgfcurveto%
+        {\pgfpoint{.97\paperwidth}{4pt}}%
+        {\pgfpoint{.98\paperwidth}{8pt}}%
+        {\pgfpoint{.98\paperwidth}{12pt}}%
+        \pgflineto{\pgfpoint{.98\paperwidth}{72pt}}
+        \pgflineto{\pgfpoint{0pt}{72pt}}
+        \pgflineto{\pgfpoint{0pt}{12pt}}
+        \pgfcurveto%
+        {\pgfpoint{0pt}{8pt}}%
+        {\pgfpoint{.01\paperwidth}{4pt}}%
+        {\pgfpoint{.02\paperwidth}{4pt}}%
+        % fill color
+        \pgfsetstrokeopacity{1}
+        \pgfsetstrokecolor{gray!10!white}
+        \pgfshadepath{beamer@headlineshade}{0}
+      \end{pgfscope}%
+    \end{pgfpicture}
+  }
+  \vskip-76pt
+  \hbox{
+    \begin{beamercolorbox}[wd=100pt,ht=72pt,ignorebg,left]{fg=white}
+      \hskip-\beamer@leftmargin
+      \vbox to72pt{\vfill\hbox{%
+          % svg2tikz output --
+          \begin{tikzpicture}[y=0.60pt, x=0.60pt, yscale=-1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt]
+            \path[fill=cffffff] (51.9860,57.2970) .. controls (50.1890,57.3220) and
+            (52.3260,58.2230) .. (54.6720,58.5840) .. controls (55.3200,58.0780) and
+            (55.9080,57.5660) .. (56.4320,57.0680) .. controls (54.9710,57.4260) and
+            (53.4840,57.4340) .. (51.9860,57.2970);
+            \path[fill=cffffff] (61.6310,54.8930) .. controls (62.7010,53.4160) and
+            (63.4810,51.7990) .. (63.7560,50.1270) .. controls (63.5160,51.3190) and
+            (62.8690,52.3480) .. (62.2600,53.4340) .. controls (58.9010,55.5490) and
+            (61.9440,52.1780) .. (62.2580,50.8970) .. controls (58.6460,55.4430) and
+            (61.7620,53.6230) .. (61.6310,54.8930);
+            \path[fill=cffffff] (65.1910,45.6290) .. controls (65.4080,42.3930) and
+            (64.5540,43.4160) .. (64.2670,44.6510) .. controls (64.6020,44.8250) and
+            (64.8670,46.9320) .. (65.1910,45.6290);
+            \path[fill=cffffff] (45.1720,1.3990) .. controls (46.1310,1.5710) and
+            (47.2440,1.7030) .. (47.0880,1.9320) .. controls (48.1370,1.7020) and
+            (48.3750,1.4900) .. (45.1720,1.3990);
+            \path[fill=cffffff] (47.0880,1.9320) -- (46.4100,2.0720) -- (47.0410,2.0160) --
+            (47.0880,1.9320);
+            \path[fill=cffffff] (76.9920,46.8560) .. controls (77.0990,49.7620) and
+            (76.1420,51.1720) .. (75.2790,53.6680) -- (73.7260,54.4440) .. controls
+            (72.4550,56.9120) and (73.8490,56.0110) .. (72.9390,57.9740) .. controls
+            (70.9550,59.7380) and (66.9180,63.4940) .. (65.6260,63.8370) .. controls
+            (64.6830,63.8160) and (66.2650,62.7240) .. (66.4720,62.2960) .. controls
+            (63.8160,64.1200) and (64.3410,65.0340) .. (60.2790,66.1420) --
+            (60.1600,65.8780) .. controls (50.1420,70.5910) and (36.2260,61.2510) ..
+            (36.4090,48.5070) .. controls (36.3020,49.3160) and (36.1050,49.1140) ..
+            (35.8830,49.4410) .. controls (35.3660,42.8840) and (38.9110,36.2980) ..
+            (44.8900,33.6090) .. controls (50.7380,30.7140) and (57.5940,31.9020) ..
+            (61.7830,35.8060) .. controls (59.4820,32.7920) and (54.9020,29.5970) ..
+            (49.4740,29.8960) .. controls (44.1570,29.9800) and (39.1830,33.3590) ..
+            (37.5230,37.0270) .. controls (34.7990,38.7420) and (34.4830,43.6380) ..
+            (33.2960,44.5340) .. controls (31.6990,56.2710) and (36.3000,61.3420) ..
+            (44.0830,67.3070) .. controls (45.3080,68.1330) and (44.4280,68.2580) ..
+            (44.5940,68.8870) .. controls (42.0080,67.6760) and (39.6400,65.8480) ..
+            (37.6930,63.6100) .. controls (38.7260,65.1220) and (39.8410,66.5920) ..
+            (41.2820,67.7470) .. controls (38.8440,66.9210) and (35.5870,61.8390) ..
+            (34.6360,61.6320) .. controls (38.8390,69.1570) and (51.6880,74.8290) ..
+            (58.4160,72.0150) .. controls (55.3030,72.1300) and (51.3480,72.0790) ..
+            (47.8500,70.7860) .. controls (46.3810,70.0300) and (44.3830,68.4640) ..
+            (44.7400,68.1710) .. controls (53.9220,71.6010) and (63.4070,70.7690) ..
+            (71.3520,64.4000) .. controls (73.3730,62.8260) and (75.5810,60.1480) ..
+            (76.2190,60.1110) .. controls (75.2580,61.5560) and (76.3830,60.8060) ..
+            (75.6450,62.0820) .. controls (77.6590,58.8340) and (74.7700,60.7600) ..
+            (77.7270,56.4730) -- (78.8190,57.9770) .. controls (78.4130,55.2810) and
+            (82.1670,52.0070) .. (81.7860,47.7430) .. controls (82.6470,46.4390) and
+            (82.7470,49.1460) .. (81.8330,52.1460) .. controls (83.1010,48.8180) and
+            (82.1670,48.2830) .. (82.4930,45.5370) .. controls (82.8450,46.4600) and
+            (83.3070,47.4410) .. (83.5440,48.4150) .. controls (82.7180,45.1990) and
+            (84.3920,42.9990) .. (84.8060,41.1300) .. controls (84.3980,40.9490) and
+            (83.5310,42.5520) .. (83.3330,38.7530) .. controls (83.3620,37.1030) and
+            (83.7920,37.8880) .. (83.9580,37.4820) .. controls (83.6340,37.2960) and
+            (82.7840,36.0310) .. (82.2670,33.6050) .. controls (82.6420,33.0350) and
+            (83.2690,35.0830) .. (83.7790,35.1670) .. controls (83.4510,33.2380) and
+            (82.8860,31.7670) .. (82.8630,30.2870) .. controls (81.3730,27.1730) and
+            (82.3360,30.7020) .. (81.1270,28.9500) .. controls (79.5410,24.0030) and
+            (82.4430,27.8020) .. (82.6390,25.5540) .. controls (85.0430,29.0370) and
+            (86.4140,34.4350) .. (87.0430,36.6710) .. controls (86.5630,33.9450) and
+            (85.7870,31.3040) .. (84.8400,28.7490) .. controls (85.5700,29.0560) and
+            (83.6640,23.1400) .. (85.7890,27.0580) .. controls (83.5190,18.7060) and
+            (76.0740,10.9020) .. (69.2250,7.2400) .. controls (70.0630,8.0070) and
+            (71.1210,8.9700) .. (70.7410,9.1210) .. controls (67.3350,7.0930) and
+            (67.9340,6.9350) .. (67.4460,6.0780) .. controls (64.6710,4.9490) and
+            (64.4890,6.1690) .. (62.6510,6.0800) .. controls (57.4210,3.3060) and
+            (56.4130,3.6010) .. (51.6000,1.8630) -- (51.8190,2.8860) .. controls
+            (48.3540,1.7320) and (47.7820,3.3240) .. (44.0370,2.8900) .. controls
+            (43.8090,2.7120) and (45.2370,2.2460) .. (46.4120,2.0750) .. controls
+            (43.0620,2.5170) and (43.2190,1.4150) .. (39.9410,2.1970) .. controls
+            (40.7490,1.6300) and (41.6030,1.2550) .. (42.4650,0.7730) .. controls
+            (39.7330,0.9390) and (35.9430,2.3630) .. (37.1130,1.0680) .. controls
+            (32.6570,3.0560) and (24.7430,5.8470) .. (20.3020,10.0110) -- (20.1620,9.0780)
+            .. controls (18.1270,11.5210) and (11.2880,16.3740) .. (10.7430,19.5380) --
+            (10.1990,19.6650) .. controls (9.1400,21.4580) and (8.4550,23.4900) ..
+            (7.6150,25.3350) .. controls (6.2300,27.6950) and (5.5850,26.2430) ..
+            (5.7820,26.6130) .. controls (3.0580,32.1360) and (1.7050,36.7770) ..
+            (0.5360,40.5830) .. controls (1.3690,41.8280) and (0.5560,48.0780) ..
+            (0.8710,53.0800) .. controls (-0.4970,77.7840) and (18.2090,101.7700) ..
+            (38.6560,107.3080) .. controls (41.6530,108.3800) and (46.1100,108.3390) ..
+            (49.9010,108.4490) .. controls (45.4280,107.1700) and (44.8500,107.7710) ..
+            (40.4930,106.2520) .. controls (37.3500,104.7720) and (36.6610,103.0820) ..
+            (34.4350,101.1500) -- (35.3160,102.7070) .. controls (30.9500,101.1620) and
+            (32.7770,100.7950) .. (29.2250,99.6700) -- (30.1660,98.4410) .. controls
+            (28.7510,98.3340) and (26.4180,96.0560) .. (25.7800,94.7950) --
+            (24.2320,94.8560) .. controls (22.3720,92.5610) and (21.3810,90.9070) ..
+            (21.4530,89.6260) -- (20.9530,90.5170) .. controls (20.3860,89.5440) and
+            (14.1100,81.9100) .. (17.3660,83.6870) .. controls (16.7610,83.1340) and
+            (15.9570,82.7870) .. (15.0850,81.2030) -- (15.7480,80.4450) .. controls
+            (14.1810,78.4290) and (12.8640,75.8450) .. (12.9640,74.9840) .. controls
+            (13.8000,76.1130) and (14.3800,76.3240) .. (14.9540,76.5170) .. controls
+            (10.9970,66.6990) and (10.7750,75.9760) .. (7.7780,66.5230) --
+            (8.4120,66.4720) .. controls (7.9260,65.7400) and (7.6310,64.9450) ..
+            (7.2400,64.1650) -- (7.5160,61.4150) .. controls (4.6670,58.1210) and
+            (6.7190,47.4090) .. (7.1300,41.5340) .. controls (7.4150,39.1450) and
+            (9.5080,36.6020) .. (11.1000,32.6140) -- (10.1300,32.4470) .. controls
+            (11.9840,29.2130) and (20.7160,19.4590) .. (24.7600,19.9610) .. controls
+            (26.7190,17.5000) and (24.3710,19.9520) .. (23.9880,19.3320) .. controls
+            (28.2910,14.8790) and (29.6440,16.1860) .. (32.5480,15.3850) .. controls
+            (35.6800,13.5260) and (29.8600,16.1100) .. (31.3450,14.6760) .. controls
+            (36.7590,13.2930) and (35.1820,11.5320) .. (42.2450,10.8300) .. controls
+            (42.9900,11.2540) and (40.5160,11.4850) .. (39.8950,12.0350) .. controls
+            (44.4060,9.8280) and (54.1700,10.3300) .. (60.5120,13.2600) .. controls
+            (67.8710,16.6990) and (76.1390,26.8650) .. (76.4650,36.4300) --
+            (76.8360,36.5300) .. controls (76.6480,40.3320) and (77.4180,44.7290) ..
+            (76.0840,48.7680) -- (76.9920,46.8560);
+            \path[fill=cffffff] (32.3720,59.7640) -- (32.1200,61.0240) .. controls
+            (33.3010,62.6280) and (34.2380,64.3660) .. (35.7460,65.6200) .. controls
+            (34.6610,63.5020) and (33.8550,62.6270) .. (32.3720,59.7640);
+            \path[fill=cffffff] (35.1640,59.6540) .. controls (34.5390,58.9630) and
+            (34.1690,58.1310) .. (33.7550,57.3020) .. controls (34.1510,58.7590) and
+            (34.9620,60.0110) .. (35.7170,61.2840) -- (35.1640,59.6540);
+            \path[fill=cffffff] (84.5680,48.9160) -- (84.3040,49.5780) .. controls
+            (83.8200,53.0160) and (82.7750,56.4180) .. (81.1730,59.5720) .. controls
+            (82.9430,56.2440) and (84.0880,52.6040) .. (84.5680,48.9160);
+            \path[fill=cffffff] (45.5270,0.5370) .. controls (46.7420,0.0920) and
+            (48.5140,0.2930) .. (49.8030,0.0000) .. controls (48.1230,0.1410) and
+            (46.4510,0.2250) .. (44.8000,0.4380) -- (45.5270,0.5370);
+            \path[fill=cffffff] (2.8720,23.2190) .. controls (3.1520,25.8110) and
+            (0.9220,26.8170) .. (3.3660,25.1080) .. controls (4.6760,22.1570) and
+            (2.8540,24.2930) .. (2.8720,23.2190);
+            \path[fill=cffffff] (0.0000,35.2150) .. controls (0.5630,33.4870) and
+            (0.6650,32.4490) .. (0.8800,31.4490) .. controls (-0.6760,33.4380) and
+            (0.1640,33.8620) .. (0.0000,35.2150);
+          \end{tikzpicture}
+        }\vfill}
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[wd=.9\textwidth,ht=72pt,ignorebg,left]{fg=white}
+      \hskip-55pt%
+      \vbox to72pt{\vfill%
+        \usebeamerfont{frametitle}\insertframetitle%
+        {\ifx\insertframesubtitle\@empty
+          \else{%
+            \par\usebeamerfont{framesubtitle}%
+            \usebeamercolor[fg]{framesubtitle}%
+            \insertframesubtitle\par}
+          \fi}%
+        \vfill}
+    \end{beamercolorbox}
+  }
+}
+
+%%%% footer
+%% create custom footer
+\setbeamertemplate{navigation symbols}{}
+\addtobeamertemplate{footline}{
+  \leavevmode%
+  \ifx\beamer@KansaiDebian@navigation\beamer@KansaiDebian@true%
+  \hbox{%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=.5ex,right,rightskip=2ex]{bg=white}%
+      \usebeamercolor[fg]{navigation symbols}%
+      \insertslidenavigationsymbol%
+      \insertframenavigationsymbol%
+      \insertsubsectionnavigationsymbol%
+      \insertsectionnavigationsymbol%
+      \insertdocnavigationsymbol%
+      \insertbackfindforwardnavigationsymbol%
+    \end{beamercolorbox}%
+  }
+  \fi%
+  \hbox{%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=3.5ex,dp=0ex,center]{fg=black}%
+      \pgfuseshading{beamer@footlineshade}
+      \ifx\beamer@KansaiDebian@infoline\beamer@KansaiDebian@true%
+      \vskip-3.5ex
+      \hbox{%
+        \begin{beamercolorbox}[wd=.34\paperwidth,ht=3.5ex,dp=0ex,center]{author in head/foot}%
+          \vbox to3ex{\vfill\hbox{%
+              \insertshortauthor\expandafter\beamer@ifempty\expandafter{\beamer@shortinstitute}{}{~~(\insertshortinstitute)}%
+            }\vfill}
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=3.5ex,dp=0ex,center]{title in head/foot}%
+          \vbox to3ex{\vfill\hbox{%
+              \usebeamerfont{title in head/foot}\insertshorttitle%
+            }\vfill}
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=3.5ex,dp=0ex,right,left]{date in head/foot}%
+          \vbox to3ex{\vfill
+            \hbox{%
+              \hspace*{5em}\usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{7em}
+              \insertframenumber{} / \inserttotalframenumber%
+            }\vfill}
+        \end{beamercolorbox}%
+      }
+      \fi%
+    \end{beamercolorbox}%
+  }
+}
+
+
+%% item, enumlist
+\setbeamertemplate{itemize item}{\scriptsize\raise1.25pt\hbox{\donotcoloroutermaths$\blacktriangleright$}}
+\setbeamertemplate{itemize subitem}{\tiny\raise1.5pt\hbox{\donotcoloroutermaths$\bullet$}}
+\setbeamertemplate{itemize subsubitem}{\tiny\raise1.5pt\hbox{\donotcoloroutermaths$-$}}
+\setbeamertemplate{enumerate item}{\insertenumlabel.}
+\setbeamertemplate{enumerate subitem}{\insertenumlabel.\insertsubenumlabel}
+\setbeamertemplate{enumerate subsubitem}{\insertenumlabel.\insertsubenumlabel.\insertsubsubenumlabel}
+\setbeamertemplate{enumerate mini template}{\insertenumlabel}
+\setbeamerfont{bibliography item}{size=\scriptsize}
+\setbeamerfont{bibliography entry author}{size=\scriptsize}
+\setbeamerfont{bibliography entry title}{size=\scriptsize}
+\setbeamerfont{bibliography entry location}{size=\scriptsize}
+\setbeamerfont{bibliography entry note}{size=\scriptsize}
+\setlength{\leftmargini}{1em}
+\setlength{\leftmarginii}{.8em}
+\setlength{\leftmarginiii}{0.5em}
+
+%% [takahashi method] %%%
+\newcommand{\takahashi}[2][12]{
+  {%
+    \usebackgroundtemplate{}
+    \setbeamertemplate{headline}{}
+    \setbeamertemplate{footline}{}
+    \begin{frame}
+      \centering
+      \bfseries \fontsize{#1pt}{#1pt}\selectfont #2
+    \end{frame}
+  }
+}
+
+\mode<all>
+
+% % commandline 環境
+% \definecolor{dancerdarkblue}{rgb}{0,0.08,0.45}
+% \definecolor{dancernormalblue}{rgb}{0.8,0.9,0.95}
+% \definecolor{dancerlightblue}{rgb}{0.8,0.95,1}
+% \usepackage{ulem}
+% \usepackage{tabularx}
+% \usepackage{fancybox}
+% \usepackage{fancyvrb}
+% \usepackage{float}
+% \newenvironment{commandline}%
+% {\VerbatimEnvironment
+%   \begin{Sbox}\begin{minipage}{1.0\textwidth}\begin{fontsize}{8}{8} \begin{BVerbatim}}%
+%                 {\end{BVerbatim}\end{fontsize}\end{minipage}\end{Sbox}
+%   \setlength{\fboxsep}{8pt}
+%   % start on a new paragraph
+%   \vspace{6pt}% skip before
+%   \fcolorbox{dancerdarkblue}{dancerlightblue}{\TheSbox}
+%   \vspace{6pt}% skip after
+% }
+% % end of commandline
