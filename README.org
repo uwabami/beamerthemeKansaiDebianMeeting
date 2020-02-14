@@ -30,7 +30,7 @@
     :END:
     \centering
     write =\takahashi[70]{Takahashi methods}= outside =frame= environment
-#+BEGIN_LATEX
+#+BEGIN_EXPORT LATEX
 \end{block}
 \end{frame}
 \takahashi[70]{Takahashi methods}
@@ -38,7 +38,7 @@
 \begin{block}{\texttt{\textbackslash{}takahashi}}
 \centering
 write \texttt{\textbackslash{}takahashi[70]\{Takahashi methods\}} outside \texttt{frame} environment
-#+END_LATEX
+#+END_EXPORT
 ** Permission
 *** All contents DFSG-Free.
      - Author: Youhei SASAKI <uwabami@gfd-dennou.org>
