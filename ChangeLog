@@ -1,3 +1,13 @@
+2022-12-05 Youhei SASAKI <uwabami@gfd-dennou.org>
+
+	Fix footline spacing, update README about options
+	Signed-off-by: Youhei SASAKI <uwabami@gfd-dennou.org>
+
+2020-02-14 Youhei SASAKI <uwabami@gfd-dennou.org>
+
+	Fix org-mode notation
+	Signed-off-by: Youhei SASAKI <uwabami@gfd-dennou.org>
+
 2017-02-26 Youhei SASAKI <uwabami@gfd-dennou.org>
 
 	Fix background color in takahashi methods

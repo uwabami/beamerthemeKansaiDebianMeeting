@@ -1,5 +1,5 @@
 %
-% Copyright 2010-2017 Youhei SASAKI <uwabami@gfd-dennou.org>
+% Copyright 2010-2022 Youhei SASAKI <uwabami@gfd-dennou.org>
 %
 % This program can be redistributed and/or modified under the terms of
 % the GNU Lesser Public License version 3, or (at your option) any later
@@ -28,9 +28,6 @@
 \setbeamertemplate{title page}[default][colsep=-4bp,rounded=true,shadow=\beamer@KansaiDebian@shadow]
 \usecolortheme{whale,orchid}
 \useinnertheme{circles}
-%
-% \usefonttheme{professionalfonts}
-% \usefonttheme{structurebold}
 
 %% fontsize settings
 \setbeamerfont{framesubtitle}{parent=frametitle,size=\normalsize}
@@ -47,7 +44,7 @@
 \usecolortheme[RGB={214,6,80}]{structure}
 
 %% footer shading
-\pgfdeclarehorizontalshading[headerlight,headerdark]{beamer@footlineshade}{3.5ex}{%
+\pgfdeclarehorizontalshading[headerlight,headerdark]{beamer@footlineshade}{5ex}{%
   color(0ex)=(headerlight);
   color(\paperwidth)=(headerdark)
 }
@@ -191,6 +188,7 @@
 \setbeamertemplate{headline}{}
 \defbeamertemplate*{frametitle}{KansaiDebian}[1][left]
 {
+  \vskip-.15ex%
   \hbox{%
     \hskip-\beamer@leftmargin
     \begin{pgfpicture}{0pt}{0pt}{\paperwidth}{72pt}
@@ -366,7 +364,7 @@
 %%%% footer
 %% create custom footer
 \setbeamertemplate{navigation symbols}{}
-\addtobeamertemplate{footline}{
+\setbeamertemplate{footline}{%
   \leavevmode%
   \ifx\beamer@KansaiDebian@navigation\beamer@KansaiDebian@true%
   \hbox{%
@@ -381,33 +379,29 @@
     \end{beamercolorbox}%
   }
   \fi%
+  \ifx\beamer@KansaiDebian@infoline\beamer@KansaiDebian@true%
   \hbox{%
-    \begin{beamercolorbox}[wd=\paperwidth,ht=3.5ex,dp=0ex,center]{fg=black}%
-      \pgfuseshading{beamer@footlineshade}
-      \ifx\beamer@KansaiDebian@infoline\beamer@KansaiDebian@true%
-      \vskip-3.5ex
+    \begin{beamercolorbox}[wd=\paperwidth,ht=5ex,dp=1.25ex,center,leftskip=0ex,rightskip=0ex,sep=0ex]{fg=,white}%
+      \pgfuseshading{beamer@footlineshade}%
+      \vskip-5ex%
       \hbox{%
-        \begin{beamercolorbox}[wd=.34\paperwidth,ht=3.5ex,dp=0ex,center]{author in head/foot}%
-          \vbox to3ex{\vfill\hbox{%
-              \insertshortauthor\expandafter\beamer@ifempty\expandafter{\beamer@shortinstitute}{}{~~(\insertshortinstitute)}%
-            }\vfill}
+        \begin{beamercolorbox}[wd=.233333\paperwidth,ht=3.25ex,dp=1ex,left,leftskip=2.5ex]{author in head/foot}%
+          {%
+            \usebeamerfont{author in head/foot}%
+            \insertshortauthor\expandafter\beamer@ifempty\expandafter{\beamer@shortinstitute}{}{~~(\insertshortinstitute)}%
+          }%
         \end{beamercolorbox}%
-        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=3.5ex,dp=0ex,center]{title in head/foot}%
-          \vbox to3ex{\vfill\hbox{%
-              \usebeamerfont{title in head/foot}\insertshorttitle%
-            }\vfill}
-        \end{beamercolorbox}%
-        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=3.5ex,dp=0ex,right,left]{date in head/foot}%
-          \vbox to3ex{\vfill
-            \hbox{%
-              \hspace*{5em}\usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{7em}
-              \insertframenumber{} / \inserttotalframenumber%
-            }\vfill}
-        \end{beamercolorbox}%
-      }
-      \fi%
+        \begin{beamercolorbox}[wd=.533333\paperwidth,ht=3.25ex,dp=1ex,center]{title in head/foot}%
+          \usebeamerfont{title in head/foot}%
+          \insertshorttitle%
+        \end{beamercolorbox}
+        \begin{beamercolorbox}[wd=.233333\paperwidth,ht=3.25ex,dp=1ex,right,rightskip=2.5ex]{date in head/foot}%
+          \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{1em}\insertframenumber{}/\inserttotalframenumber%
+        \end{beamercolorbox}
+      }%
     \end{beamercolorbox}%
   }
+  \fi%
 }
 
 
@@ -441,24 +435,3 @@
 }
 
 \mode<all>
-
-% % commandline 環境
-% \definecolor{dancerdarkblue}{rgb}{0,0.08,0.45}
-% \definecolor{dancernormalblue}{rgb}{0.8,0.9,0.95}
-% \definecolor{dancerlightblue}{rgb}{0.8,0.95,1}
-% \usepackage{ulem}
-% \usepackage{tabularx}
-% \usepackage{fancybox}
-% \usepackage{fancyvrb}
-% \usepackage{float}
-% \newenvironment{commandline}%
-% {\VerbatimEnvironment
-%   \begin{Sbox}\begin{minipage}{1.0\textwidth}\begin{fontsize}{8}{8} \begin{BVerbatim}}%
-%                 {\end{BVerbatim}\end{fontsize}\end{minipage}\end{Sbox}
-%   \setlength{\fboxsep}{8pt}
-%   % start on a new paragraph
-%   \vspace{6pt}% skip before
-%   \fcolorbox{dancerdarkblue}{dancerlightblue}{\TheSbox}
-%   \vspace{6pt}% skip after
-% }
-% % end of commandline

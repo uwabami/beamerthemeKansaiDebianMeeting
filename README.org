@@ -6,7 +6,7 @@
 #+STARTUP: beamer
 #+LATEX_CLASS_OPTIONS: [unicode,presentation,c,squeeze,shrink,10pt]
 #+BEAMER_FRAME_LEVEL: 2
-#+BEAMER_THEME: KansaiDebian
+#+BEAMER_THEME: [infoline,shadow]KansaiDebian
 #+BEAMER_HEADER: \AtBeginSection[]{\begin{frame}<beamer>\frametitle{Outline}\tableofcontents[currentsection]\end{frame}}
 * Kansai Debian Presentation template
 ** What is This?
@@ -23,13 +23,18 @@
     #+LaTeX: \hspace*{.5em}
     #+ATTR_LaTeX: :width .3\textwidth :center
     [[file:images/images-5.png]]
+** options
+   =\usetheme[<options>]{KansaiDebian}=
+   - =infoline= : show author/title/date information on footline.
+   - =shadow= : Add drop-shadow to boxes.
+   - =navigation= : show PDF navigation symbols
 ** New?
 *** =\takahashi=                                                    :B_block:
     :PROPERTIES:
     :BEAMER_env: block
     :END:
     \centering
-    write =\takahashi[70]{Takahashi methods}= outside =frame= environment
+    write =\takahashi{Takahashi methods}= outside =frame= environment
 #+BEGIN_EXPORT LATEX
 \end{block}
 \end{frame}
